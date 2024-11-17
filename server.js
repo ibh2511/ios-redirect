@@ -15,14 +15,14 @@ app.get('*', (req, res) => {
                 </head>
                 <body>
                     <script>
-                        window.location.href = "https://tinyurl.com/Juletreff2024";
+                        window.location.href = "https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec";
                     </script>
                 </body>
             </html>
         `);
     } else {
         // Vanlig omdirigering
-        res.redirect('https://tinyurl.com/Juletreff2024');
+        res.redirect('https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec');
     }
 });
 
