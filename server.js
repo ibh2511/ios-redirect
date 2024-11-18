@@ -5,7 +5,7 @@ app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
     const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Checks if it's Facebook App
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Checks if it's iOS
-    const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
+    const urlPath = 'script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
     if (isFacebookApp && isIOS) {
         // Force Safari opening via intermediate page
@@ -16,7 +16,7 @@ app.get('*', (req, res) => {
                 </head>
                 <body>
                     <a 
-                      href="x-safari-${url}" 
+                      href="x-safari-https://${urlPath}" 
                       target="_blank">
                       Meld deg på
                     </a>
@@ -32,7 +32,7 @@ app.get('*', (req, res) => {
                 </head>
                 <body>
                     <a 
-                      href="intent://${url}#Intent;scheme=https;end" 
+                      href="intent://${urlPath}#Intent;scheme=https;end" 
                       target="_blank">
                       Open Browser
                     </a>
