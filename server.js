@@ -9,8 +9,8 @@ app.get('*', (req, res) => {
     const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
 
-    // if ((isFacebookApp || isInstagramApp) && isIOS) {
-    if (isFacebookApp && isIOS) {
+    if ((isFacebookApp || isInstagramApp) && isIOS) {
+    //if (isFacebookApp && isIOS) {
         // Force Safari opening via intermediate page with auto redirect
         res.send(`
             <html>
