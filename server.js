@@ -15,15 +15,26 @@ app.get('*', (req, res) => {
                     <title>Redirecting...</title>
                 </head>
                 <body>
-                    <script>
+                  /*  <script>
                         window.location.href = `x-safari-${url}`;
-                    </script>
+                    </script>*/
+                    <a 
+                      href="x-safari-https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec" 
+                      target="_blank">
+                      Meld deg på
+                    </a>
                 </body>
             </html>
         `);
     } else {
         // Vanlig omdirigering
-        res.redirect(url);
+       // res.redirect(url);
+            <a 
+              href="intent://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec#Intent;scheme=https;end" 
+              target="_blank">
+              Open Browser
+            </a>
+
     }
 });
 
