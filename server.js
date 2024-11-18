@@ -5,7 +5,7 @@ app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
     const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Sjekker om det er Facebook App
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Sjekker om det er iOS
-    const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec'
+    const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
     if (isFacebookApp && isIOS) {
         // Tving Safari-åpning via mellomside
