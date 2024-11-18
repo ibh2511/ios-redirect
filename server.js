@@ -1,4 +1,4 @@
-const express = require('express');
+egconst express = require('express');
 const app = express();
 
 app.get('*', (req, res) => {
@@ -23,7 +23,7 @@ app.get('*', (req, res) => {
                 <body>
                     <p>Redirecting...</p>
                     <noscript>
-                        <a href="x-safari-${url}" target="_blank">Click here to redirect</a>
+                        <a href="x-safari-${url}" target="_blank">Meld deg på</a>
                     </noscript>
                 </body>
             </html>
