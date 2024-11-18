@@ -4,9 +4,12 @@ const app = express();
 app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
     const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Checks if it's Facebook App
+    const isInstagramApp = /Instagram/i.test(userAgent); // Checks if it's Instagram App
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Checks if it's iOS
     const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
+
+    // if ((isFacebookApp || isInstagramApp) && isIOS) {
     if (isFacebookApp && isIOS) {
         // Force Safari opening via intermediate page with auto redirect
         res.send(`
