@@ -3,23 +3,20 @@ const app = express();
 
 app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
-    const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Sjekker om det er Facebook App
-    const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Sjekker om det er iOS
+    const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Checks if it's Facebook App
+    const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Checks if it's iOS
     const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
     if (isFacebookApp && isIOS) {
-        // Tving Safari-åpning via mellomside
+        // Force Safari opening via intermediate page
         res.send(`
             <html>
                 <head>
                     <title>Redirecting...</title>
                 </head>
                 <body>
-                  /*  <script>
-                        window.location.href = `x-safari-${url}`;
-                    </script>*/
                     <a 
-                      href="x-safari-https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec" 
+                      href="x-safari-${url}" 
                       target="_blank">
                       Meld deg på
                     </a>
@@ -27,21 +24,21 @@ app.get('*', (req, res) => {
             </html>
         `);
     } else {
-        // Vanlig omdirigering
-       // res.redirect(url);
-        <html>
-            <head>
-                <title>Redirecting...</title>
-            </head>
-            <body>
-                <a 
-                  href="intent://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec#Intent;scheme=https;end" 
-                  target="_blank">
-                  Open Browser
-                </a>
-            </body>
-        </html>
-
+        // Regular redirect
+        res.send(`
+            <html>
+                <head>
+                    <title>Redirecting...</title>
+                </head>
+                <body>
+                    <a 
+                      href="intent://${url}#Intent;scheme=https;end" 
+                      target="_blank">
+                      Open Browser
+                    </a>
+                </body>
+            </html>
+        `);
     }
 });
 
