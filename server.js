@@ -5,40 +5,32 @@ app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
     const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Checks if it's Facebook App
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Checks if it's iOS
-    const urlPath = 'script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
     if (isFacebookApp && isIOS) {
-        // Force Safari opening via intermediate page
+        // Force Safari opening via intermediate page with auto redirect
         res.send(`
             <html>
                 <head>
                     <title>Redirecting...</title>
+                    <script>
+                        // Automatically redirect for iOS users in the Facebook app
+                        window.onload = function() {
+                            window.location.href = "x-safari-${url}";
+                        };
+                    </script>
                 </head>
                 <body>
-                    <a 
-                      href="x-safari-https://${urlPath}" 
-                      target="_blank">
-                      Meld deg på
-                    </a>
+                    <p>Redirecting...</p>
+                    <noscript>
+                        <a href="x-safari-${url}" target="_blank">Click here to redirect</a>
+                    </noscript>
                 </body>
             </html>
         `);
     } else {
-        // Regular redirect
-        res.send(`
-            <html>
-                <head>
-                    <title>Redirecting...</title>
-                </head>
-                <body>
-                    <a 
-                      href="intent://${urlPath}#Intent;scheme=https;end" 
-                      target="_blank">
-                      Open Browser
-                    </a>
-                </body>
-            </html>
-        `);
+        // Regular redirect for other users
+        res.redirect(url);
     }
 });
 
