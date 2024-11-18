@@ -29,11 +29,18 @@ app.get('*', (req, res) => {
     } else {
         // Vanlig omdirigering
        // res.redirect(url);
-            <a 
-              href="intent://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec#Intent;scheme=https;end" 
-              target="_blank">
-              Open Browser
-            </a>
+        <html>
+            <head>
+                <title>Redirecting...</title>
+            </head>
+            <body>
+                <a 
+                  href="intent://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec#Intent;scheme=https;end" 
+                  target="_blank">
+                  Open Browser
+                </a>
+            </body>
+        </html>
 
     }
 });
