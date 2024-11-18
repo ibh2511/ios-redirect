@@ -6,7 +6,8 @@ app.get('*', (req, res) => {
     const isFacebookApp = /FBAV|FBAN/i.test(userAgent); // Sjekker om det er Facebook App
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent); // Sjekker om det er iOS
 
-
+    if (isFacebookApp && isIOS) {
+        // Tving Safari-åpning via mellomside
         res.send(`
             <html>
                 <head>
@@ -19,6 +20,10 @@ app.get('*', (req, res) => {
                 </body>
             </html>
         `);
+    } else {
+        // Vanlig omdirigering
+        res.redirect('https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec');
+    }
 });
 
 const port = process.env.PORT || 3000;
