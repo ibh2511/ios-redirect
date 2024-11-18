@@ -13,24 +13,24 @@ app.get('*', (req, res) => {
             <html>
             <head>
                 <title>Redirecting...</title>
-                <meta http-equiv="refresh" content="0; url=https://tinyurl.com/Juletreff2024">
+                <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec">
                 <script>
                     // Ensure the link opens in Safari if the meta refresh fails
                     setTimeout(() => {
-                        window.location.replace("https://tinyurl.com/Juletreff2024");
+                        window.location.replace("https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec");
                     }, 1000);
                 </script>
             </head>
             <body>
                 <noscript>
-                    <p>Redirecting to <a href="https://tinyurl.com/Juletreff2024">Juletreff 2024</a>...</p>
+                    <p>Redirecting to <a href="https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec">Juletreff 2024</a>...</p>
                 </noscript>
             </body>
             </html>
         `);
     } else {
         // Directly redirect to the URL for all other cases
-        res.redirect('https://tinyurl.com/Juletreff2024');
+        res.redirect('https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec');
     }
 });
 
