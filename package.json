@@ -18,6 +18,6 @@
     "node": ">=14.0.0"
   },
   "keywords": ["redirect", "express", "user-agent"],
-  "author": "Your Name",
+  "author": "IBH",
   "license": "MIT"
 }
