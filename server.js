@@ -5,7 +5,8 @@ const app = express();
 require('dotenv').config();
 
 // Get URL from environment variable
-const url = process.env.REDIRECT_URL || 'https://default-url.com';
+//const url = process.env.REDIRECT_URL || 'https://default-url.com';
+const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
 
 app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
