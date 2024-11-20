@@ -5,8 +5,7 @@ const app = express();
 require('dotenv').config();
 
 // Get URL from environment variable
-//const url = process.env.REDIRECT_URL || 'https://default-url.com';
-const url = 'https://script.google.com/macros/s/AKfycbwrh7hhJioUbGhkAnqTlnEgROgDOSuqZNGUFEbDmtyAFM45uWsfaGaHgcaWdl-gCOvZ/exec';
+const url = process.env.REDIRECT_URL || 'https://default-url.com';
 
 app.get('*', (req, res) => {
     const userAgent = req.headers['user-agent'] || '';
@@ -80,17 +79,28 @@ app.get('*', (req, res) => {
                     text-decoration: underline;
                 }
                 button {
-                    padding: 10px 20px;
-                    background-color: #007bff;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 1.1em;
-                    cursor: pointer;
+                    padding: 10px 20px; /* Behagelig avstand */
+                    background-color: #007bff; /* Original farge */
+                    color: white; /* Tekstfarge */
+                    border: none; /* Fjern kant */
+                    border-radius: 8px; /* Mer avrundet */
+                    font-size: 1.1em; /* Større tekst for lesbarhet */
+                    cursor: pointer; /* For å indikere at det er klikkbart */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtil skygge */
+                    transition: transform 0.2s, box-shadow 0.2s; /* Glatt animasjon */
                 }
+                
                 button:hover {
-                    background-color: #0056b3;
+                    background-color: #0056b3; /* Mørkere blå for hover */
+                    transform: translateY(-2px); /* Løft knappen litt */
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Økt skygge */
                 }
+                
+                button:active {
+                    transform: translateY(0); /* Tilbake til original posisjon */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Original skygge */
+                }
+
                 footer {
                     margin-top: 20px;
                     font-size: 0.9em;
