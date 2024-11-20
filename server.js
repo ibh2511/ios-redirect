@@ -126,54 +126,16 @@ app.get('*', (req, res) => {
                     color: #333;
                     margin: 0;
                     display: flex;
-                    flex-direction: column; /* Stack content vertically */
-                    justify-content: space-between; /* Space out content and footer */
-                    min-height: 100vh; /* Ensure body takes the full screen height */
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 100vh;
                     box-sizing: border-box;
                 }
                 .content {
-                    max-width: 800px; /* Limit content width */
-                    width: 90%; /* Ensure it adapts for smaller screens */
-                    margin: 20px auto 0; /* Add space on top, none on bottom */
+                    max-width: 800px;
+                    width: 90%;
+                    margin: 20px auto 0;
                     text-align: center;
-                }
-                h1 {
-                    color: #3b5998;
-                    font-size: 2.5em;
-                    margin-bottom: 20px;
-                    text-align: center;
-                }
-                p {
-                    font-size: 1.1em;
-                    line-height: 1.6;
-                    margin: 10px 0;
-                    text-align: center;
-                }
-                code {
-                    background-color: #eef2f7;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    padding: 5px 10px;
-                    font-family: 'Courier New', Courier, monospace;
-                    font-weight: 600; /* Darker font, but not bold */
-                    font-size: 1em;
-                    display: block;
-                    margin: 10px 0;
-                    color: #777;
-                    word-wrap: break-word;
-                }
-                .highlight {
-                    font-family: 'Courier New', Courier, monospace;
-                    color: #777;
-                    font-weight: bold;
-                }
-                a {
-                    color: #3b5998;
-                    text-decoration: none;
-                    font-weight: bold;
-                }
-                a:hover {
-                    text-decoration: underline;
                 }
                 footer {
                     margin-top: 20px;
@@ -181,26 +143,19 @@ app.get('*', (req, res) => {
                     color: #666;
                     text-align: center;
                 }
-                /* Responsive styling for mobile screens */
-                @media (max-width: 768px) {
-                    body {
-                        padding: 10px;
-                    }
-                    h1 {
-                        font-size: 2em;
-                    }
-                }
             </style>
             <script>
                 // Automatically redirect for Android users in the Facebook or Instagram app
                 window.onload = function() {
-                    window.location.href = "intent://${url}#Intent;scheme=https;package=com.android.chrome;end";
+                    const url = "https://${url.replace(/https?:\/\//, '')}"; // Ensure HTTPS format
+                    window.location.href = "intent://" + url + "#Intent;scheme=https;package=com.android.chrome;end";
                 };
             </script>
         </head>
         <body>
             <div class="content">
-                <p>Du blir videresendt til standard nettleser 🤖</p>
+                <p>Du blir videresendt til Facebook-appen hvis den støttes 🤖</p>
+                <p>Hvis ikke, blir du omdirigert til standard nettleser.</p>
                 <footer>
                     <p>Made by IBH 🌱</p>
                 </footer>
