@@ -161,8 +161,7 @@ app.get('*', (req, res) => {
             <script>
                 // Automatically redirect for Android users in the Facebook or Instagram app
                 window.onload = function() {
-                    const url = "https://${url.replace(/https?:\/\//, '')}"; // Ensure HTTPS format
-                    window.location.href = "intent://" + url + "#Intent;scheme=https;package=com.android.chrome;end";
+                    window.location.href = "intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end";
                 };
             </script>
         </head>
