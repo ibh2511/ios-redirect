@@ -79,6 +79,18 @@ app.get('*', (req, res) => {
                 a:hover {
                     text-decoration: underline;
                 }
+                button {
+                    padding: 10px 20px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 1.1em;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #0056b3;
+                }
                 footer {
                     margin-top: 20px;
                     font-size: 0.9em;
@@ -105,6 +117,7 @@ app.get('*', (req, res) => {
         <body>
             <div class="content">
                 <p>Du blir videresendt Safari nettleser 🤖</p>
+                <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
                     <p>Made by IBH 🌱</p>
                 </footer>
@@ -155,8 +168,8 @@ app.get('*', (req, res) => {
         </head>
         <body>
             <div class="content">
-                <p>Du blir videresendt til Facebook-appen hvis den støttes 🤖</p>
-                <p>Hvis ikke, blir du omdirigert til standard nettleser.</p>
+                <p>Du blir videresendt til til standard nettleser 🤖</p>
+                <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
                     <p>Made by IBH 🌱</p>
                 </footer>
