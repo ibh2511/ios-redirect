@@ -129,7 +129,7 @@ app.get('*', (req, res) => {
                 <p>Du blir videresendt Safari nettleser 🤖</p>
                 <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
-                    // <p>Made by IBH 🌱</p>
+                    <!-- <p>Made by IBH 🌱</p> -->
                 </footer>
             </div>
         </body>
@@ -170,8 +170,10 @@ app.get('*', (req, res) => {
             </style>
             <script>
                 // Automatically redirect for Android users in the Facebook or Instagram app
+                // window.location.href = "intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end";
                 window.onload = function() {
-                    window.location.href = "intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end";
+                    console.log("Attempting to open in the default browser...");
+                    window.location.href = "intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;end";
                 };
             </script>
         </head>
@@ -180,7 +182,7 @@ app.get('*', (req, res) => {
                 <p>Du blir videresendt til til standard nettleser 🤖</p>
                 <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
-                    // <p>Made by IBH 🌱</p>
+                    <!-- <p>Made by IBH 🌱</p> -->
                 </footer>
             </div>
         </body>
