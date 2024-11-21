@@ -129,7 +129,7 @@ app.get('*', (req, res) => {
                 <p>Du blir videresendt Safari nettleser 🤖</p>
                 <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
-                    <p>Made by IBH 🌱</p>
+                    // <p>Made by IBH 🌱</p>
                 </footer>
             </div>
         </body>
@@ -180,7 +180,7 @@ app.get('*', (req, res) => {
                 <p>Du blir videresendt til til standard nettleser 🤖</p>
                 <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
-                    <p>Made by IBH 🌱</p>
+                    // <p>Made by IBH 🌱</p>
                 </footer>
             </div>
         </body>
