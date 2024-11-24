@@ -182,7 +182,7 @@ app.get('*', (req, res) => {
                 <p>Du blir videresendt til til standard nettleser 🤖</p>
                 <button onclick="location.reload()">Last inn på nytt</button>
                 <footer>
-                    <!-- <p>Made by IBH 🌱</p> -->
+                    <p>🦾 by 🌱</p>
                 </footer>
             </div>
         </body>
